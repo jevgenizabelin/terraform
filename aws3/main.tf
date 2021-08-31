@@ -57,10 +57,10 @@ resource "aws_instance" "web" {
 
 }
 
-variable "db_instance" {
-    prod = "t2.large"
-    stage = "t2.nano"
-}
+#variable "db_instance" {
+#    prod = "t2.large"
+#    stage = "t2.nano"
+#}
 
 #variable "db_instance" {
 #   type        = map
@@ -77,13 +77,13 @@ variable "db_instance" {
 #  }
 #}
 
-resource "aws_instance" "db" {
-  for_each = var.db_instance
-  ami           = "ami-0b28dfc7adc325ef4"
-  instance_type = each.value
+#resource "aws_instance" "db" {
+#  for_each = var.db_instance
+#  ami           = "ami-0b28dfc7adc325ef4"
+#  instance_type = each.value
   
 
 #  tags = {
 #    Name = "Workspace ${each.key}"
 #  }
-}
+#}
